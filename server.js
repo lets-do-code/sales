@@ -20,7 +20,6 @@ const SCOPES = 'SalesIQ.operators.READ,SalesIQ.operators.UPDATE';
 // 1. Redirect user to Zoho Authorization page
 app.get('/auth', (req, res) => {
     const authURL = `${ZOHO_AUTH_URL}?response_type=code&client_id=${process.env.CLIENT_ID}&scope=${SCOPES}&redirect_uri=${process.env.REDIRECT_URI}&access_type=offline&prompt=consent&state=random_state`;
-
     res.redirect(authURL);
 });
 
